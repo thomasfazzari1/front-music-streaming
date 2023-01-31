@@ -70,73 +70,6 @@ body{
     text-decoration:none;
 }
 
-#MusicPlayer{
-    color: white;
-    text-align: center;
-    
-}
-
-#MusicPlayerContent{
-    text-align: center;
-    margin-right: 30%;
-    margin-left: 30%;
-}
-
-#NowPlaying{
-    width: 70px;
-    height: 70px;
-}
-
-#MusicPlayer #ArtistName{
-    font-size: 15px;
-    color:cornflowerblue
-}
-
-.hp_slide{
-    width:250px;
-    background:white;
-    height:5px;
-}
-.hp_range{
-    width:0;
-    background:cornflowerblue;
-    height:5px;
-}
-
-.volume {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.volume input[type=range] {
-    display: none;
-}
-
-.volume .bar-hoverbox {
-    padding: 10px 15px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-.volume .bar-hoverbox:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-.volume .bar {
-    background: #999;
-    height: 7px;
-    width: 120px;
-    border-radius: 15px;
-    overflow: hidden;
-    pointer-events: none;
-}
-.volume .bar .bar-fill {
-    background: cornflowerblue;
-    width: 0%;
-    height: 100%;
-    background-clip: border-box;
-    pointer-events: none;
-}
-
 #tabs{
     color: white;
 }
@@ -204,9 +137,11 @@ body{
 
 
 #MusicPlayer {
+    color: white;
     display: grid;
     place-content: center;
     background-color: black;
+    text-align: center;
 }
 
 .player {
@@ -215,7 +150,7 @@ body{
     width: 70rem;
     background-color: #212529;
     border-radius: 0.5rem;
-    box-shadow: 0 1.5rem 1.5rem #212529;
+    box-shadow: 0 1.2rem 1.2rem cornflowerblue;
     overflow: hidden;
 }
 
@@ -257,14 +192,11 @@ body{
     display: grid;
     place-content: center;
     font-size: 1.25rem;
-    background-color: #1AAFFF;
+    background-color: cornflowerblue;
     color: white;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 0rem #1AAFFFAA;
+    box-shadow: 0 0 0rem cornflowerblue;
 }
 
-.player .control i:hover {
-    box-shadow: 0 0 1.5rem #1AAFFFAA;
-    font-size: 1.5rem;
-}
+

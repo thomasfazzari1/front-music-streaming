@@ -44,7 +44,7 @@
         wavesurfer = WaveSurfer.create({
             container: "#wave",
             waveColor: "#cdedff",
-            progressColor: "#1AAFFF",
+            progressColor: "cornflowerblue",
             height: 48,
             scrollParent: false
         });
@@ -69,14 +69,12 @@
         
         //change play button to pause on plying
         wavesurfer.on("play", function (e) {
-            playPause.classList.remove("fi-rr-play");
-            playPause.classList.add("fi-rr-pause");
+            playPause.innerHTML = '<i class="fa fa-pause" ></i>';
         });
         
         //change pause button to play on pause
         wavesurfer.on("pause", function (e) {
-            playPause.classList.add("fi-rr-play");
-            playPause.classList.remove("fi-rr-pause");
+            playPause.innerHTML = '<i class="fa fa-play" ></i>';
         });
         
         //update current time on seek
