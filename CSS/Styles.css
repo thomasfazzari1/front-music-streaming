@@ -1,11 +1,10 @@
 body{
     background-color: black;
     font-family: "Montserrat", sans-serif;
-
 }
 
-#SousTitre{
-    font-size: 13px;
+#Title{
+    font-size: 25px;
     text-align: center;
 }
 
@@ -16,6 +15,7 @@ body{
 
 #TopNav .active{
     color:cornflowerblue!important;
+    display: flex;
 }
 
 #TopNav .active::after{
@@ -33,6 +33,7 @@ body{
     background-color: #353b48;
     border-radius: 30px;
     padding: 10px;
+    display: flex;
 }
 
 .search_input{
@@ -86,13 +87,13 @@ body{
     height: 70px;
 }
 
-#MusicPlayer #AlbumTitle{
+#MusicPlayer #ArtistName{
     font-size: 15px;
     color:cornflowerblue
 }
 
 .hp_slide{
-    width:300px;
+    width:250px;
     background:white;
     height:5px;
 }
@@ -134,4 +135,68 @@ body{
     height: 100%;
     background-clip: border-box;
     pointer-events: none;
+}
+
+#tabs{
+    color: white;
+}
+
+#tabs h6.section-title{
+    color: cornflowerblue;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs  {
+    color:  white;
+    background-color: transparent;
+    border-color: transparent transparent;
+    border-bottom: 2px solid cornflowerblue!important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tabs .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color:  white;
+    font-size: 20px;
+}
+
+#tabs .nav-tabs .nav-link:hover{
+    color:  cornflowerblue;
+ 
+}
+
+#tabs .nav-tabs .nav-link.active{
+    color:  cornflowerblue;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nav-tabContent{
+    color:white;
+}
+
+.card{
+    margin-right: 20px;
+    width: 15rem;
+    height:15rem;
+    background-color: black;
+}
+
+.card-img{
+    transition: transform 0.5s;
+    width: 200px;
+    height: 200px;
+}
+
+.card-img:hover{
+    transform: scale(1.05);
+}
+
+
+.img-titre{
+    width: 40px;
+    height: 40px;
 }
