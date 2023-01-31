@@ -1,8 +1,10 @@
 
             var player = document.getElementById("AudioPlayer");
+ 
             function play(isPlaying){
               if(isPlaying){
                 player.play();
+                player.get
                 document.getElementById("playBtn").style.display = "none";
                 document.getElementById("pauseBtn").style.display = "block";
               }else{
@@ -132,6 +134,9 @@
             $("#AArtistName").text("Kavinsky");
             player.play();
         }
+
+
+        
         
 
 
