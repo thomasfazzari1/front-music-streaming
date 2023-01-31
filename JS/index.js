@@ -25,9 +25,6 @@
               progbar.value = percent / 100;
             });
 
-
-
-
             document.addEventListener("DOMContentLoaded", () => {
             const range = document.querySelector(".volume input[type=range]");
             const barHoverBox = document.querySelector(".volume .bar-hoverbox");
@@ -124,10 +121,16 @@
             $("#ASongName").text("Phantom Pt.II");
             $("#AArtistName").text("Justice");
             player.play();
-
-            
         }
 
+        function playNightcall(){
+            document.getElementById("AudioPlayer").setAttribute("src","../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");
+            document.getElementById("NowPlaying").setAttribute("src","../IMAGES/ALBUMS/OUTRUN.jpg");
+            $("#ASongName").text("Nightcall");
+            $("#AArtistName").text("Kavinsky");
+            player.play();
+        }
+        
 
 
             
