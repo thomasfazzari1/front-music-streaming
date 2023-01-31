@@ -1,0 +1,145 @@
+body{
+    background-color: black;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+#SousTitre{
+    font-size: 13px;
+    text-align: center;
+}
+
+#ProfilePicMenu{
+    width: 40px;
+    height: 40px;
+}
+
+#TopNav .active{
+    color:cornflowerblue!important;
+}
+
+#TopNav .active::after{
+    content:"";
+    background-color: cornflowerblue;
+    height:2px;
+    display: block;
+    margin-top:5px;
+}
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input{
+    color: white;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 500px;
+    caret-color:transparent;
+    line-height: 20px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    caret-color:cornflowerblue;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+    color: cornflowerblue;
+}
+
+.search_icon{
+    height: 20px;
+    width: 60px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+}
+
+#MusicPlayer{
+    color: white;
+    text-align: center;
+    
+}
+
+#MusicPlayerContent{
+    text-align: center;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+#NowPlaying{
+    width: 70px;
+    height: 70px;
+}
+
+#MusicPlayer #AlbumTitle{
+    font-size: 15px;
+    color:cornflowerblue
+}
+
+.hp_slide{
+    width:300px;
+    background:white;
+    height:5px;
+}
+.hp_range{
+    width:0;
+    background:cornflowerblue;
+    height:5px;
+}
+
+.volume {
+    input[type=range] {
+      display: none;
+    }
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .icon-size {
+      font-size: 2rem;
+    }
+    
+    .bar-hoverbox {
+      padding: 10px 15px;
+      opacity: 0.7;
+      transition: opacity .2s;
+      
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+    
+    .bar {
+      background: #999;
+      height: 7px;
+      width: 120px;
+      border-radius: 15px;
+      overflow: hidden;
+      pointer-events: none;
+      
+      .bar-fill {
+        background: #FFF;
+        width: 0%;
+        height: 100%;
+        background-clip: border-box;
+        pointer-events: none;
+      }
+    }
+  }

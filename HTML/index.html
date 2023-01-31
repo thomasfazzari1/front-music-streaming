@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/Styles.css" />
+
+    <title>SOUNDS</title>
+  </head>
+  <body>
+
+    <main>
+      <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-top" id="TopNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><i class="fa fa-cloud"></i> SOUNDS <div id="SousTitre">Votre musique</div></a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="container h-100">
+              <div class="d-flex justify-content-center h-100">
+                <div class="searchbar">
+                  <input class="search_input" type="text" name="" placeholder="Rechercher (artiste, album, titre...)">
+                  <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item ">
+                <a class="nav-link active" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mix</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nouveautés</a>
+              </li>
+
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Genres
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Rock</a></li>
+                    <li><a class="dropdown-item" href="#">Électro</a></li>
+                    <li><a class="dropdown-item" href="#">Soul</a></li>
+                  </ul>
+                </li>
+
+                <img class="rounded-circle"src="../images/users/utilisateur.jpg" id="ProfilePicMenu">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nom utilisateur
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Votre profil</a></li>
+                    <li><a class="dropdown-item" href="#">Vos playlists</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </main>
+
+    <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-bottom" style="display: flex;" id="MusicPlayer">
+      <div class="container-fluid" id="MusicPlayerContent">
+  
+        <img src="../IMAGES/ALBUMS/outrun.jpg" id="NowPlaying">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="container-fluid">
+            <div class="d-flex" id="SongName">
+                <a>Nightcall</a>
+            </div>
+            <div class="d-flex " id="AlbumTitle">
+              <a>Kavinsky</a>
+            </div>
+          </div>
+
+
+          <div class="container-fluid">
+            <div class="d-flex">
+              <div class="hp_slide">
+                <div class="hp_range"></div></div>
+              </div>
+              <audio controls style="display: none;" id="AudioPlayer">
+                <source src="../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3"  type="audio/mp3">
+              </audio>  
+            </div>
+          </div>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link active" href="#"><i class="fa fa-backward"></i></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="#" onclick="play(1)" id="playBtn"><i class="fa fa-play"></i></a>
+              <a class="nav-link active" href="#" onclick="play(0)" style="display: none;" id="pauseBtn"><i class="fa fa-pause" style="color:cornflowerblue"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><i class="fa fa-forward"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"><i class="fa fa-volume-up" style="color:cornflowerblue"></i></a>
+            </li>
+            <li class="nav-item" style="display: flex;">
+              <input type="range" min="0" max="100" value="20" class="volume-range">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+
+            function play(isPlaying){
+              var player = document.getElementById("AudioPlayer");
+              if(isPlaying){
+                player.play();
+                document.getElementById("playBtn").style.display = "none";
+                document.getElementById("pauseBtn").style.display = "block";
+              }else{
+                player.pause();
+                document.getElementById("pauseBtn").style.display = "none";
+                document.getElementById("playBtn").style.display = "block";
+              }
+              player.addEventListener("timeupdate", function() {
+              var currentTime = player.currentTime;
+              var duration = player.duration;
+              $('.hp_range').stop(true,true).animate({'width':(currentTime +.25)/duration*100+'%'},250,'linear');
+              });
+            }
+
+
+            $(".hp_slide").on("click", function(e) {
+              var player = document.getElementById("AudioPlayer");
+              var progbar = $('.hp_slide');
+              var pos = e.pageX - progbar.offset().left; //Position cursor
+              var percent = pos / progbar.width(); //Get width element
+              player.currentTime = percent * player.duration;
+              progbar.value = percent / 100;
+            });
+    </script>
+    
+  </body>
+
+</html>
