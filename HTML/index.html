@@ -166,52 +166,25 @@
 
     </main>
 
-    <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-bottom"  id="MusicPlayer">
-      <div class="container-fluid" id="MusicPlayerContent">
-  
-        <img src="../IMAGES/ALBUMS/outrun.jpg" id="NowPlaying">
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="container-fluid">
-            <div id="SongName">
-                <a id="ASongName">Nightcall</a>
+    <nav class="fixed-bottom"  id="MusicPlayer">
+      <div class="player">
+        <div class="thumb">
+          <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" />
+        </div>
+        <div class="info">
+          <div class="detail">
+            <div class="title">
+              Kavinsky - Nightcall
+              <div class="time">
+                <span id="current">0:00</span> /
+                <span id="duration">0:00</span>
+              </div>
             </div>
-            <div id="ArtistName">
-              <a id="AArtistName">Kavinsky</a>
+            <div class="control">
+              <i class="fa fa-play" id="playPause"></i>
             </div>
           </div>
-    
-          <div class="container-fluid"> 
-              <div class="hp_slide">
-                <div class="hp_range"></div>
-              </div>
-              <audio controls style="display: none;" id="AudioPlayer">
-                <source src="../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3"  type="audio/mp3">
-              </audio>  
-          </div>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item ">
-              <a class="nav-link active" href="#"><i class="fa fa-backward"></i></a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link active" href="#" onclick="play(1)" id="playBtn"><i class="fa fa-play"></i></a>
-              <a class="nav-link active" href="#" onclick="play(0)" style="display: none;" id="pauseBtn"><i class="fa fa-pause" style="color:cornflowerblue"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#"><i class="fa fa-forward"></i></a>
-            </li>
-            <li class="nav-item" style="display: flex;">  
-              <div class="volume" >             
-                <input type="range" min="0" max="100" value="20" class="volume-range" id="vol-range">
-                <div class="bar-hoverbox">
-                  <div class="bar">
-                    <div class="bar-fill"></div>
-                  </div>
-                </div>
-                <i class="fa fa-volume-up icon-size" aria-hidden="true" style="color: cornflowerblue;">&#8205; </i>
-              </div>
-            </li>
-          </ul>
+          <div id="wave"></div>
         </div>
       </div>
     </nav>
@@ -220,10 +193,12 @@
 
  
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js"></script>
+
+    <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script  src="../JS/index.js"></script>
+   
   </body>
 
 </html>
