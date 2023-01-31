@@ -116,6 +116,7 @@
         
         
         function playPhantom(){
+            play(1);
             document.getElementById("AudioPlayer").setAttribute("src","../MP3/ARTIST/JUSTICE/CROSS/phantompt2.mp3");
             document.getElementById("NowPlaying").setAttribute("src","../IMAGES/ALBUMS/cross.jpg");
             $("#ASongName").text("Phantom Pt.II");
@@ -124,6 +125,7 @@
         }
 
         function playNightcall(){
+            play(1);
             document.getElementById("AudioPlayer").setAttribute("src","../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");
             document.getElementById("NowPlaying").setAttribute("src","../IMAGES/ALBUMS/OUTRUN.jpg");
             $("#ASongName").text("Nightcall");
