@@ -140,16 +140,15 @@ body{
     color: white;
     display: grid;
     place-content: center;
-    background-color: transparent;
+    background-color: black;
     text-align: center;
 }
 
 .player {
     display: grid;
     grid-template-columns: 10rem 1fr;
-    width: 70rem;
+    width: 90rem;
     background-color: black;
-    border-radius: 0.5rem;
     box-shadow: 0 1.2rem 1.2rem #212529;
     overflow: hidden;
 }
@@ -191,7 +190,7 @@ body{
     height: 3.5rem;
     display: grid;
     place-content: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background-color: cornflowerblue;
     color: white;
     border-radius: 50%;

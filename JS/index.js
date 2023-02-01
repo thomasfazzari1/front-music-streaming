@@ -160,7 +160,7 @@
 
         window.addEventListener("load", (event) => {
             loadIndex();
-            //playNightcall();
+            playNightcall();
         });
 
 
