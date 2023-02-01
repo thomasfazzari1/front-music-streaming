@@ -16,12 +16,21 @@
             document.getElementById("nav-songs").style.display="none";
             if(number==1){
                 document.getElementById("nav-albums").style.display="flex";
+                document.getElementById("nav-albums-tab").classList.add("active");
+                document.getElementById("nav-artistes-tab").classList.remove("active");
+                document.getElementById("nav-songs-tab").classList.remove("active");
             }
             if(number==2){
                 document.getElementById("nav-artistes").style.display="flex";
+                document.getElementById("nav-albums-tab").classList.remove("active");
+                document.getElementById("nav-artistes-tab").classList.add("active");
+                document.getElementById("nav-songs-tab").classList.remove("active");
             }
             if(number==3){
                 document.getElementById("nav-songs").style.display="flex";
+                document.getElementById("nav-albums-tab").classList.remove("active");
+                document.getElementById("nav-artistes-tab").classList.remove("active");
+                document.getElementById("nav-songs-tab").classList.add("active");
             }
         }   
 

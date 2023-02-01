@@ -140,7 +140,7 @@ body{
     color: white;
     display: grid;
     place-content: center;
-    background-color: black;
+    background-color: transparent;
     text-align: center;
 }
 
