@@ -17,181 +17,38 @@
   </head>
   <body>
 
-    <main>
-      <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-top" id="TopNav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html" id="Title"><i class="fa fa-cloud"></i> SOUNDS </a>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <div class="container h-100">
-              <div class="d-flex justify-content-center h-100">
-                <div class="searchbar">
-                  <input class="search_input" type="text" name="" placeholder="Rechercher (artiste, album, titre...)">
-                  <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item ">
-                <a class="nav-link active" href="index.html">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Mix</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Nouveautés</a>
-              </li>
-
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Genres
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Rock</a></li>
-                    <li><a class="dropdown-item" href="#">Électro</a></li>
-                    <li><a class="dropdown-item" href="#">Soul</a></li>
-                  </ul>
-                </li>
-
-                <a href="profile.html"><img class="rounded-circle"src="../images/users/utilisateur.jpg" id="ProfilePicMenu"></a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Thomas Fazzari
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="../HTML/profile.html">Votre profil</a></li>
-                    <li><a class="dropdown-item" href="#">Vos playlists</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Paramètres</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <section id="tabs">
-        <div class="container">
-          <h6 class="section-title h1">&#8205;</h6>
-          <div class="row">
-            <div class="col-xs-12 ">
-              <nav>
-                <div class="nav nav-tabs" id="nav-tab-menu2" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-albums-tab" data-toggle="tab" onclick="displayNav(1)">Albums</a>
-                  <a class="nav-item nav-link" id="nav-artistes-tab" data-toggle="tab" onclick="displayNav(2)">Artistes</a>
-                  <a class="nav-item nav-link" id="nav-songs-tab" data-toggle="tab" onclick="displayNav(3)">Titres</a>
-                </div>
-              </nav>
-              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
- 
-                <div id="nav-albums" style="display: flex;">
-                    <div class="row">
-                      <div class="card">
-                        <img class="card-img" src="../IMAGES/ALBUMS/outrun.jpg" alt="Outrun par Kavinsky">
-                        <div class="card-body" style="text-align: center;">
-                          <p class="card-text" style="font-weight: bold;">Outrun<br><span style="color:white; font-weight: lighter;">Kavinsky</span></p>
-                        </div>
-                      </div>
-    
-                      <div class="card">
-                        <img class="card-img" src="../IMAGES/ALBUMS/cross.jpg" alt="Outrun par Kavinsky">
-                        <div class="card-body" style="text-align: center;">
-                          <p class="card-text" style="font-weight: bold;">✞<br><span style="color:white; font-weight: lighter;">Justice</span></p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-
-
-                
-                <div id="nav-artistes" style="display: none;">
-                  <div class="row">
-
-                    <div class="card">
-                      <a href="artiste.html"><img class="card-img rounded-circle" src="../IMAGES/ARTISTS/kavinsky-artist.jpg" alt="Outrun par Kavinsky"></a>
-                      <div class="card-body" style="text-align: center;">
-                        <p class="card-text" style="font-weight: bold;">Kavinsky</p>
-                      </div>
-                    </div>
-  
-                    <div class="card">
-                      <img class="card-img rounded-circle" src="../IMAGES/ARTISTS/justice-artist.jpg" alt="Outrun par Kavinsky">
-                      <div class="card-body" style="text-align: center;">
-                        <p class="card-text" style="font-weight: bold;">Justice</p>
-                      </div>
-                    </div>
-
-
-                  </div>
-                </div>
-
-
-
-                <div id="nav-songs" style="display: none;">
-                  <table class="table" style="background-color: black; color:white">
-
-                    <tbody>
-                      <tr>
-                        <th scope="row">
-                          <a ><img class="img-titre" src="../IMAGES/ALBUMS/outrun.jpg"><span style="font-weight: bold;margin-left: 20px;">Kavinsky</span><span style="font-weight:lighter"> - Nightcall</span> <i class="fa fa-play" id="playNightcall" onclick="playNightcall()" style="color:cornflowerblue; margin-left:10px;"></i></a>
-                        </th>
-                      <tr>
-                      <tr>
-                        <th scope="row">
-                          <a><img class="img-titre" src="../IMAGES/ALBUMS/cross.jpg"><span style="font-weight: bold;margin-left: 20px;">Justice</span><span style="font-weight:lighter"> - Phantom Pt.II</span> <i class="fa fa-play" id="playPhantom" onclick="playPhantom()" style="color:cornflowerblue; margin-left:10px;"></i></a>
-                        </th>
-                      <tr>
-                    </tbody>
-                  </table>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <div class="container-fluid" style="text-align: center;color:white;"> 
-        <div id="WaveForm" style="margin-top: 10%;">
-      
-        </div>
-      </div>
+    <main id="main">
 
     </main>
 
-    <nav class="fixed-bottom"  id="MusicPlayer">
-      <div class="player">
-        <div class="thumb">
-          <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" />
-        </div>
-        <div class="info">
-          <div class="detail">
-            <div class="title">
-              Kavinsky - Nightcall
-              <div class="time">
-                <span id="current">0:00</span> /
-                <span id="duration">0:00</span>
+
+    <footer>
+      <nav class="fixed-bottom"  id="MusicPlayer">
+
+        <!--
+        <div class="player">
+          <div class="thumb">
+            <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" />
+          </div>
+          <div class="info">
+            <div class="detail">
+              <div class="title">
+                Kavinsky - Nightcall
+                <div class="time">
+                  <span id="current">0:00</span> /
+                  <span id="duration">0:00</span>
+                </div>
+              </div>
+              <div class="control">
+                <a id="playPause"><i class="fa fa-play" ></i></a>
               </div>
             </div>
-            <div class="control">
-              <a id="playPause"><i class="fa fa-play" ></i></a>
-            </div>
+            <div id="wave"></div>
           </div>
-          <div id="wave"></div>
         </div>
-      </div>
-    </nav>
-
-
-
- 
+        -->
+      </nav>
+    </footer>
 
 
     <script src="https://unpkg.com/wavesurfer.js"></script>
@@ -200,5 +57,5 @@
     <script  src="../JS/index.js"></script>
    
   </body>
-
+  <div  class="spacer"> . </div>
 </html>

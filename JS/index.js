@@ -25,65 +25,123 @@
             }
         }   
 
-        duration = document.querySelector("#duration");
-        current = document.querySelector("#current");
-        playPause = document.querySelector("#playPause");
-        
-        var timeCalculator = function (value) {
-            second = Math.floor(value % 60);
-            minute = Math.floor((value / 60) % 60);
-            
-            if (second < 10) {
-                second = "0" + second;
-            }
-        
-            return minute + ":" + second;
-        };
-        
-        //start wavesurfer object 
-        wavesurfer = WaveSurfer.create({
-            container: "#wave",
-            waveColor: "#cdedff",
-            progressColor: "cornflowerblue",
-            height: 48,
-            scrollParent: false
-        });
-        
-        //load audio file
-        wavesurfer.load("../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");
-        
-        //play and pause a player
-        playPause.addEventListener("click", function (e) {
-            wavesurfer.playPause();
-        });
-        
-        //load audio duration on load
-        wavesurfer.on("ready", function (e) {
-            duration.textContent = timeCalculator(wavesurfer.getDuration());
-        });
-        
-        //get updated current time on play
-        wavesurfer.on("audioprocess", function (e) {
-            current.textContent = timeCalculator(wavesurfer.getCurrentTime());
-        });
-        
-        //change play button to pause on plying
-        wavesurfer.on("play", function (e) {
-            playPause.innerHTML = '<i class="fa fa-pause" ></i>';
-        });
-        
-        //change pause button to play on pause
-        wavesurfer.on("pause", function (e) {
-            playPause.innerHTML = '<i class="fa fa-play" ></i>';
-        });
-        
-        //update current time on seek
-        wavesurfer.on("seek", function (e) {
-            current.textContent = timeCalculator(wavesurfer.getCurrentTime());
-        });
 
-        
-        
+
+        function play(path){
+              
+            duration = document.querySelector("#duration");
+            current = document.querySelector("#current");
+            playPause = document.querySelector("#playPause");
+            
+            var timeCalculator = function (value) {
+                second = Math.floor(value % 60);
+                minute = Math.floor((value / 60) % 60);
+                
+                if (second < 10) {
+                    second = "0" + second;
+                }
+            
+                return minute + ":" + second;
+            };
+            
+            //start wavesurfer object 
+            wavesurfer = WaveSurfer.create({
+                container: "#wave",
+                waveColor: "#cdedff",
+                progressColor: "cornflowerblue",
+                height: 48,
+                scrollParent: false
+            });
+            
+            //load audio file
+            wavesurfer.load(path);
+            
+            //play and pause a player
+            playPause.addEventListener("click", function (e) {
+                wavesurfer.playPause();
+            });
+            
+            //load audio duration on load
+            wavesurfer.on("ready", function (e) {
+                duration.textContent = timeCalculator(wavesurfer.getDuration());
+            });
+            
+            //get updated current time on play
+            wavesurfer.on("audioprocess", function (e) {
+                current.textContent = timeCalculator(wavesurfer.getCurrentTime());
+            });
+            
+            //change play button to pause on plying
+            wavesurfer.on("play", function (e) {
+                playPause.innerHTML = '<i class="fa fa-pause" ></i>';
+            });
+            
+            //change pause button to play on pause
+            wavesurfer.on("pause", function (e) {
+                playPause.innerHTML = '<i class="fa fa-play" ></i>';
+            });
+            
+            //update current time on seek
+            wavesurfer.on("seek", function (e) {
+                current.textContent = timeCalculator(wavesurfer.getCurrentTime());
+            });
+
+
+        }
+
+
+
+        function playPhantom(){
+            try {
+                wavesurfer.playPause();
+              } catch (error) {
+                console.error(error);
+                // Expected output: ReferenceError: nonExistentFunction is not defined
+                // (Note: the exact output may be browser-dependent)
+              }
+
+            MusicPlayer.innerHTML= '<div class="player"><div class="thumb"><img src="../IMAGES/ALBUMS/cross.jpg" alt="" /></div><div class="info"><div class="detail"> <div class="title">Justice - Phantom Pt.II<div class="time"><span id="current">0:00</span> /<span id="duration">0:00</span></div></div><div class="control"><a id="playPause"><i class="fa fa-play" ></i></a></div> </div><div id="wave"></div></div> </div>';
+            play("../MP3/ARTIST/JUSTICE/CROSS/phantompt2.mp3");
+        }
+
+        function playNightcall(){
+            try {
+                wavesurfer.playPause();
+              } catch (error) {
+                console.error(error);
+                // Expected output: ReferenceError: nonExistentFunction is not defined
+                // (Note: the exact output may be browser-dependent)
+              }
+            MusicPlayer.innerHTML= '<div class="player"> <div class="thumb"> <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" /> </div> <div class="info"> <div class="detail"> <div class="title"> Kavinsky - Nightcall <div class="time"> <span id="current">0:00</span> / <span id="duration">0:00</span> </div> </div> <div class="control"> <a id="playPause"><i class="fa fa-play" ></i></a> </div> </div> <div id="wave"></div> </div> </div>';    
+            play("../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");     
+        }
+
+        function loadProfile() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("main").innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "../HTML/profil.html", true);
+            xhttp.send();
+          }
+
+        function loadIndex() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("main").innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "../HTML/indexContent.html", true);
+            xhttp.send();
+          }  
+
+        window.addEventListener("load", (event) => {
+            loadIndex();
+            //playNightcall();
+        });
 
 
             
