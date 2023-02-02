@@ -98,18 +98,17 @@
                 current.textContent = timeCalculator(wavesurfer.getCurrentTime());
             });
 
-
         }
 
 
 
         function playPhantom(){
             try {
-                wavesurfer.playPause();
+                if(wavesurfer.isPlaying()){
+                    wavesurfer.playPause();
+                }
               } catch (error) {
                 console.error(error);
-                // Expected output: ReferenceError: nonExistentFunction is not defined
-                // (Note: the exact output may be browser-dependent)
               }
 
             MusicPlayer.innerHTML= '<div class="player"><div class="thumb"><img src="../IMAGES/ALBUMS/cross.jpg" alt="" /></div><div class="info"><div class="detail"> <div class="title">Justice - Phantom Pt.II<div class="time"><span id="current">0:00</span> /<span id="duration">0:00</span></div></div><div class="control"><a id="playPause"><i class="fa fa-play" ></i></a></div> </div><div id="wave"></div></div> </div>';
@@ -118,11 +117,11 @@
 
         function playNightcall(){
             try {
-                wavesurfer.playPause();
+                if(wavesurfer.isPlaying()){
+                    wavesurfer.playPause();
+                }
               } catch (error) {
                 console.error(error);
-                // Expected output: ReferenceError: nonExistentFunction is not defined
-                // (Note: the exact output may be browser-dependent)
               }
             MusicPlayer.innerHTML= '<div class="player"> <div class="thumb"> <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" /> </div> <div class="info"> <div class="detail"> <div class="title"> Kavinsky - Nightcall <div class="time"> <span id="current">0:00</span> / <span id="duration">0:00</span> </div> </div> <div class="control"> <a id="playPause"><i class="fa fa-play" ></i></a> </div> </div> <div id="wave"></div> </div> </div>';    
             play("../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");     
