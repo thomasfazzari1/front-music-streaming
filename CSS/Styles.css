@@ -113,6 +113,7 @@ body{
 
 .card{
     margin-right: 20px;
+    margin-bottom: 40px;
     width: 15rem;
     height:15rem;
     background-color: black;
@@ -200,6 +201,7 @@ body{
 
 
   .spacer{
-    margin-bottom: 110px; /* how high is your footer */
+    margin-bottom: 210px; /* how high is your footer */
     visibility: hidden; 
   }
+

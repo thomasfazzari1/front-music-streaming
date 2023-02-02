@@ -14,11 +14,14 @@
             document.getElementById("nav-albums").style.display="none";
             document.getElementById("nav-artistes").style.display="none";
             document.getElementById("nav-songs").style.display="none";
+            document.getElementById("suggestions").style.display="none";
             if(number==1){
                 document.getElementById("nav-albums").style.display="flex";
                 document.getElementById("nav-albums-tab").classList.add("active");
+                document.getElementById("suggestions").style.display="block";
                 document.getElementById("nav-artistes-tab").classList.remove("active");
                 document.getElementById("nav-songs-tab").classList.remove("active");
+
             }
             if(number==2){
                 document.getElementById("nav-artistes").style.display="flex";
@@ -72,7 +75,7 @@
             
             //load audio duration on load
             wavesurfer.on("ready", function (e) {
-                duration.textContent = timeCalculator(wavesurfer.getDuration());
+                duration.textContent = timelculator(wavesurfer.getDuration());
             });
             
             //get updated current time on play
