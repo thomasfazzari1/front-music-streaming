@@ -75,7 +75,7 @@
             
             //load audio duration on load
             wavesurfer.on("ready", function (e) {
-                duration.textContent = timelculator(wavesurfer.getDuration());
+                duration.textContent = timeCalculator(wavesurfer.getDuration());
             });
             
             //get updated current time on play
@@ -96,6 +96,10 @@
             //update current time on seek
             wavesurfer.on("seek", function (e) {
                 current.textContent = timeCalculator(wavesurfer.getCurrentTime());
+                if(wavesurfer.isPlaying()){
+                    wavesurfer.play();
+                }
+
             });
 
         }
@@ -105,26 +109,26 @@
         function playPhantom(){
             try {
                 if(wavesurfer.isPlaying()){
-                    wavesurfer.playPause();
+                    wavesurfer.pause();
                 }
               } catch (error) {
                 console.error(error);
               }
 
-            MusicPlayer.innerHTML= '<div class="player"><div class="thumb"><img src="../IMAGES/ALBUMS/cross.jpg" alt="" /></div><div class="info"><div class="detail"> <div class="title">Justice - Phantom Pt.II<div class="time"><span id="current">0:00</span> /<span id="duration">0:00</span></div></div><div class="control"><a id="playPause"><i class="fa fa-play" ></i></a></div> </div><div id="wave"></div></div> </div>';
+            MusicPlayer.innerHTML= '<div class="player"><div class="thumb"><img src="../IMAGES/ALBUMS/cross.jpg" alt="" /></div><div class="info"><div class="detail"> <div class="title">Justice - Phantom Pt.II<div class="time"><span id="current">0:00</span> /<span id="duration"></span></div></div><div class="control"><a id="playPause"><i class="fa fa-play" ></i></a></div> </div><div id="wave"></div></div> </div>';
             play("../MP3/ARTIST/JUSTICE/CROSS/phantompt2.mp3");
         }
 
         function playNightcall(){
             try {
                 if(wavesurfer.isPlaying()){
-                    wavesurfer.playPause();
+                    wavesurfer.pause();
                 }
               } catch (error) {
                 console.error(error);
               }
-            MusicPlayer.innerHTML= '<div class="player"> <div class="thumb"> <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" /> </div> <div class="info"> <div class="detail"> <div class="title"> Kavinsky - Nightcall <div class="time"> <span id="current">0:00</span> / <span id="duration">0:00</span> </div> </div> <div class="control"> <a id="playPause"><i class="fa fa-play" ></i></a> </div> </div> <div id="wave"></div> </div> </div>';    
-            play("../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3");     
+            MusicPlayer.innerHTML= '<div class="player"> <div class="thumb"> <img src="../IMAGES/ALBUMS/outrun.jpg" alt="" /> </div> <div class="info"> <div class="detail"> <div class="title"> Kavinsky - Nightcall <div class="time"> <span id="current">0:00</span> / <span id="duration"></span> </div> </div> <div class="control"> <a id="playPause"><i class="fa fa-play" ></i></a> </div> </div> <div id="wave"></div> </div> </div>';    
+            play("../MP3/ARTIST/KAVINSKY/OUTRUN/nightcall.mp3"); 
         }
 
         function loadProfile() {
